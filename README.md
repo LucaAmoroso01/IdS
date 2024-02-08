@@ -27,4 +27,4 @@ Il sistema gestirà l'interazione tra l'utente e tale mondo tramite news sempre 
 - Assicurarsi che il sistema sia compatibile con dispositivi mobili e desktop;
 - Implementare un sistema di autenticazione per gli utenti.
 
-
+# 
