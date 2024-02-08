@@ -2,9 +2,9 @@
 Repository per progetto Ingegneria del Software
 
 # Nomi dei componenti
-**Rocco Del Prete 0124002592**
-**Roberto Della Corte 0124002666**
-**Luca Amoroso 0124002512**
+- Rocco Del Prete 0124002592
+- Roberto Della Corte 0124002666
+- Luca Amoroso 0124002512
 
 # Nome traccia
 F1 Universe
