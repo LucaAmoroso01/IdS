@@ -1,7 +1,7 @@
 # Ids
 Repository per progetto Ingegneria del Software
 
-# Nomi dei componenti
+# Componenti del gruppo di lavoro
 - Rocco Del Prete 0124002592
 - Roberto Della Corte 0124002666
 - Luca Amoroso 0124002512
