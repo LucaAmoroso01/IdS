@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nico Hulkenberg - F1 driver</title>
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='images/logo.ico') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='drivers/css/main.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main.css') }}"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="manifest"
+      href="{{ url_for('static', filename='manifest.json') }}"
+    />
+    <meta name="theme-color" content="white" />
+  </head>
+  <body>
+    <nav id="navbar"></nav>
+    <div
+      class="container-fluid d-flex align-items-center justify-content-center"
+    >
+      <div class="driver-img-table-container">
+        <div class="driver-img-container">
+          <img
+            src="{{ url_for('static', filename='drivers/images/hulkenberg.avif') }}"
+            alt="Nico Hulkenberg"
+            class="driver-img"
+          />
+        </div>
+        <div class="number-table-container">
+          <div class="number-flag-container">
+            <p class="driver-strong">27</p>
+            <img
+              src="{{ url_for('static', filename='drivers/images/germany.avif') }}"
+              alt="Germany flag"
+              class="flag-img"
+            />
+          </div>
+          <p class="driver-strong">Nico Hulkenberg</p>
+          <table>
+            <tr>
+              <th>
+                <p>Team</p>
+              </th>
+              <td>
+                <a href="/teams/haas"> Haas F1 Team </a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <p>Country</p>
+              </th>
+              <td>
+                <p>Germany</p>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <p>Podiums</p>
+              </th>
+              <td>
+                <p>N/A</p>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <p>Points</p>
+              </th>
+              <td>
+                <p>530</p>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <p>Gran Prix Entered</p>
+              </th>
+              <td>
+                <p>204</p>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <p>World Championships</p>
+              </th>
+              <td>
+                <p>N/A</p>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <p>Highest Race Finish</p>
+              </th>
+              <td>
+                <p>4 (x3)</p>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <p>Highest Grid Position</p>
+              </th>
+              <td>
+                <p>1</p>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <p>Date of birth</p>
+              </th>
+              <td>
+                <p>19/08/1987</p>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <p>Place of birth</p>
+              </th>
+              <td>
+                <p>Emmerich am Rhein, Germany</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <footer id="footer"></footer>
+  </body>
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"
+  ></script>
+  <script type="module">
+    import { loadNavbar } from "{{ url_for('static', filename='navbar/js/main.js') }}";
+    import { loadFooter } from "{{ url_for('static', filename='footer/js/main.js') }}";
+
+    document.addEventListener("DOMContentLoaded", () => {
+      loadNavbar();
+      loadFooter();
+    });
+  </script>
+</html>

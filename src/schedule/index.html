@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>F1 Schedule</title>
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='images/logo.ico') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='schedule/css/main.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main.css') }}"
+    />
+    <link
+      rel="manifest"
+      href="{{ url_for('static', filename='manifest.json') }}"
+    />
+    <meta name="theme-color" content="white" />
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='schedule/js/main.js') }}"></script>
+    <script type="module">
+      import { loadNavbar } from "{{ url_for('static', filename='navbar/js/main.js') }}";
+      import { loadFooter } from "{{ url_for('static', filename='footer/js/main.js') }}";
+
+      document.addEventListener("DOMContentLoaded", (e) => {
+        e.preventDefault();
+
+        loadNavbar();
+        loadFooter();
+      });
+    </script>
+  </head>
+  <body>
+    <nav id="navbar"></nav>
+    <div class="container-fluid">
+      <div class="schedule-section">
+        <div class="schedule-title-container">
+          <h1 class="schedule-title">F1 Schedule</h1>
+          <p class="schedule-subtitle">
+            FIA FORMULA ONE WORLD CHAMPIONSHIP™ RACE CALENDAR
+          </p>
+        </div>
+        <div class="schedule-list-layout w-100" id="schedule-card"></div>
+      </div>
+    </div>
+    <footer id="footer"></footer>
+  </body>
+</html>

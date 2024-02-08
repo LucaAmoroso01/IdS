@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>F1 Universe</title>
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='login-registration-page/css/main.css') }}"
+    />
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='images/logo.ico') }}"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="manifest"
+      href="{{ url_for('static', filename='manifest.json') }}"
+    />
+    <meta name="theme-color" content="white" />
+
+    <script src="{{ url_for('static', filename='login-registration-page/js/main.js') }}"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg">
+      <div
+        class="container-fluid d-flex align-items-center gap-4 justify-content-center position-relative"
+      >
+        <button
+          class="btn btn-home position-absolute"
+          id="homeButton"
+          style="left: 2rem; top: 0 !important"
+        >
+          Back Home
+        </button>
+        <div
+          class="d-flex align-items-center justify-content-between mt-1"
+          id="responsive-tabs"
+        >
+          <button class="btn btn-home" id="homeButtonResponsive">
+            Back Home
+          </button>
+          <select
+            class="form-select"
+            onchange="handleSelectChange(this)"
+            id="tab-select"
+          >
+            <option value="login">Login</option>
+            <option value="registration">Registration</option>
+          </select>
+        </div>
+        <ul class="navbar-nav ustify-content-center" id="tabs">
+          <div class="d-flex align-items-center justify-content-center w-100">
+            <li class="nav-item">
+              <button
+                class="btn btn-tab"
+                onclick="openTab('login')"
+                id="login-tab"
+              >
+                Login
+              </button>
+            </li>
+            <li class="nav-item">
+              <button
+                class="btn btn-tab"
+                onclick="openTab('registration')"
+                id="register-tab"
+              >
+                Registration
+              </button>
+            </li>
+          </div>
+        </ul>
+      </div>
+    </nav>
+    <div
+      class="d-flex align-items-center justify-content-center"
+      style="display: none"
+      id="loginContainer"
+    ></div>
+    <div
+      class="d-flex align-items-center justify-content-center"
+      style="display: none; padding-bottom: 5rem"
+      id="registrationContainer"
+    ></div>
+  </body>
+  <script>
+    const root = "/";
+
+    const homeButton = document.getElementById("homeButton");
+    homeButton.addEventListener("click", () => (window.location.href = `/`));
+
+    const homeButtonResponsive = document.getElementById(
+      "homeButtonResponsive"
+    );
+
+    if (homeButtonResponsive) {
+      homeButtonResponsive.addEventListener(
+        "click",
+        () => (window.location.href = `/`)
+      );
+    }
+
+    function getParameterByName(name, url) {
+      if (!url) url = window.location.href;
+      name = name.replace(/[\[\]]/g, "\\$&");
+      var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+      if (!results) return null;
+      if (!results[2]) return "";
+      return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+
+    var tabToShow = getParameterByName("param");
+
+    if (tabToShow === "login" || tabToShow === "registration") {
+      openTab(tabToShow);
+    }
+
+    function openTab(tab) {
+      var i;
+      var x = document.getElementsByClassName("form");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+
+      var tabButtons = document.getElementsByClassName("btn-tab");
+      for (i = 0; i < tabButtons.length; i++) {
+        tabButtons[i].classList.remove("active-tab");
+      }
+
+      var currentTabButton = document.querySelector(
+        `[onclick="openTab('${tab}')"]`
+      );
+
+      if (currentTabButton) {
+        currentTabButton.classList.add("active-tab");
+      }
+
+      loadNavbar(`${tab}`, `${tab}Container`);
+
+      var url = window.location.href.split("?")[0];
+      var newUrl = `${url}?param=${tab}`;
+      history.pushState({ path: newUrl }, "", newUrl);
+    }
+
+    function handleSelectChange(select) {
+      const selectedTab = select.value;
+      openTab(selectedTab);
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const tabToShow = getParameterByName("param");
+
+      if (tabToShow === "login" || tabToShow === "registration") {
+        const tabSelect = document.getElementById("tab-select");
+        tabSelect.value = tabToShow;
+      }
+    });
+  </script>
+</html>
