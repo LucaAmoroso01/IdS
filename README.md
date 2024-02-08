@@ -10,6 +10,11 @@ Repository per progetto Ingegneria del Software
 ## Nome traccia
 F1 Universe
 
+## Attori del sistema
+- Utente (registrato e non);
+- Giornalista;
+- Admin.
+
 ## Descrizione del progetto
 Il progetto mira a sviluppare un sistema software che permetta di rimanere costantemente connessi con il mondo della Formula 1 tramite sito web.
 Il sistema gestirà l'interazione tra l'utente e tale mondo tramite news sempre aggiornate, statistiche e curiosità.
@@ -28,7 +33,14 @@ Il sistema gestirà l'interazione tra l'utente e tale mondo tramite news sempre 
 - Implementare un sistema di autenticazione per gli utenti.
 
 # Codice sorgente
-Nella cartella "src" è possibile visualizzare il codice sorgente dell'applicativo.
+Nella cartella "src" è possibile visualizzare il codice sorgente dell'applicativo, ossia quello relativo alla parte dell'utente.
+
+# Interfacce Admin-Giornalista
+All'interno del file pdf "Interfacce Admin-Giornalista" vi sono, appunto, le interfacce relative a questi due attori, visto che in una email di tempo fa avevamo chiesto se era possibile implementarle
+tramite slides e ci avevate dato il consenso.
 
 # RAD e SDD
 Nella cartella "RAD-SDD Word" è possibile trovare i documenti RAD e SDD scritti in word, da cui poi discendono i file pdf omonimi che si trovano nella cartella "RAD-SDD Pdf".
+
+# Altre cartelle
+Le altre cartelle contengono i file e le immagini relative ai diagrammi presenti nei due documenti RAD e SDD.
