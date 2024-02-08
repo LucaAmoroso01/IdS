@@ -31,4 +31,4 @@ Il sistema gestirà l'interazione tra l'utente e tale mondo tramite news sempre 
 Nella cartella "src" è possibile visualizzare il codice sorgente dell'applicativo.
 
 # RAD e SDD
-Nella cartella RAD-SDD Word è possibile trovare i documenti RAD e SDD scritti in word, da cui poi discendono i file pdf omonimi che si trovano nella cartella RAD-SDD Pdf.
+Nella cartella "RAD-SDD Word" è possibile trovare i documenti RAD e SDD scritti in word, da cui poi discendono i file pdf omonimi che si trovano nella cartella "RAD-SDD Pdf".
